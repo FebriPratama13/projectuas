@@ -59,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: _emailController,
                 decoration: const InputDecoration(
-                  labelText: "Email / Username",
-                  hintText: "Your email",
+                  labelText: "Username",
+                  hintText: "Your Username",
                 ),
               ),
               const SizedBox(height: 16),
