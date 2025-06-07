@@ -57,10 +57,14 @@ class _CreateModulPageState extends State<CreateModulPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.close),
-                    ElevatedButton(
+                    IconButton(
                       onPressed: () {
                         Navigator.pushNamed(context, AppRoutes.home);
+                      },
+                      icon: Icon(Icons.close),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
                         // TODO: Kirim data ke backend
                       },
                       style: ElevatedButton.styleFrom(
