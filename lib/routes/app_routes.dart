@@ -11,6 +11,7 @@ import '../ui/pages/profile/edit_profile_page.dart';
 import '../ui/pages/profile/profile_page.dart';
 import '../ui/pages/search/search_page.dart';
 import '../ui/pages/modul/module_list_page.dart';
+import '../ui/pages/authors/authors_page.dart';
 
 class AppRoutes {
   //tinggal panggil nama
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String editProfile = '/edit-profile';
   static const String search = '/search';
   static const String Listmodul = '/module-list';
+  static const String authors = '/authors';
 
   //daftar root biar lebih terstruktur
   static final Map<String, WidgetBuilder> routes = {
@@ -37,5 +39,6 @@ class AppRoutes {
     editProfile: (context) => const EditProfilePage(),
     search: (context) => const SearchPage(),
     Listmodul: (context) => const ModuleListPage(),
+    authors: (context) => const AuthorsPage(),
   };
 }

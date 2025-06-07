@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../config/theme.dart';
 
-class ModuleListPage extends StatelessWidget {
+class ModuleListPage extends StatefulWidget {
   const ModuleListPage({super.key});
 
-  final List<Map<String, String>> dummyModules = const [
+  @override
+  State<ModuleListPage> createState() => _ModuleListPageState();
+}
+
+class _ModuleListPageState extends State<ModuleListPage> {
+  int _selectedIndex = 1;
+
+  final List<Map<String, String>> dummyModules = [
     {
       'title': 'Pengenalan Widget Dasar',
       'desc': 'Dalam Flutter, widget adalah blok bangunan utama...',
@@ -23,16 +30,33 @@ class ModuleListPage extends StatelessWidget {
     },
   ];
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Navigasi berdasarkan index
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, '/home');
+        break;
+      case 1:
+        break; // sudah di module
+      case 2:
+        Navigator.pushNamed(context, '/authors');
+        break;
+      case 3:
+        Navigator.pushNamed(context, '/profile');
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
-        onTap: (index) {
-          if (index == 0) Navigator.pushNamed(context, '/home');
-          if (index == 2) Navigator.pushNamed(context, '/authors');
-          if (index == 3) Navigator.pushNamed(context, '/profile');
-        },
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         selectedItemColor: AppTheme.primaryColor,
         unselectedItemColor: Colors.grey,
         items: const [
@@ -93,7 +117,6 @@ class ModuleListPage extends StatelessWidget {
                 children: const [
                   Icon(Icons.bookmark_border, color: AppTheme.primaryColor),
                   SizedBox(height: 8),
-                  FlutterLogo(size: 24),
                 ],
               ),
               onTap: () {
