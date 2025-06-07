@@ -41,7 +41,7 @@ class _ModuleListPageState extends State<ModuleListPage> {
         Navigator.pushNamed(context, '/home');
         break;
       case 1:
-        break; // sudah di module
+        break;
       case 2:
         Navigator.pushNamed(context, '/authors');
         break;
@@ -54,18 +54,6 @@ class _ModuleListPageState extends State<ModuleListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: AppTheme.primaryColor,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Module'),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Authors'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
       appBar: AppBar(
         title: const Text("Module", style: TextStyle(color: Colors.black)),
         centerTitle: true,
@@ -125,6 +113,18 @@ class _ModuleListPageState extends State<ModuleListPage> {
             ),
           );
         },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: AppTheme.primaryColor,
+        unselectedItemColor: Colors.grey,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Module'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Authors'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
       ),
     );
   }
