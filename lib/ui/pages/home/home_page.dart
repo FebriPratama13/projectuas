@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         break;
       case 1:
-        Navigator.pushNamed(context, AppRoutes.createModul);
+        Navigator.pushNamed(context, AppRoutes.Listmodul);
         break;
       case 2:
         Navigator.pushNamed(context, AppRoutes.profile); // Sementara

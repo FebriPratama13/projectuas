@@ -10,6 +10,7 @@ import '../ui/pages/modul/komentar_page.dart';
 import '../ui/pages/profile/edit_profile_page.dart';
 import '../ui/pages/profile/profile_page.dart';
 import '../ui/pages/search/search_page.dart';
+import '../ui/pages/modul/module_list_page.dart';
 
 class AppRoutes {
   //tinggal panggil nama
@@ -22,6 +23,7 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String editProfile = '/edit-profile';
   static const String search = '/search';
+  static const String Listmodul = '/module-list';
 
   //daftar root biar lebih terstruktur
   static final Map<String, WidgetBuilder> routes = {
@@ -34,5 +36,6 @@ class AppRoutes {
     profile: (context) => const ProfilePage(),
     editProfile: (context) => const EditProfilePage(),
     search: (context) => const SearchPage(),
+    Listmodul: (context) => const ModuleListPage(),
   };
 }
